@@ -59,16 +59,14 @@ int main() {
     int listSize = 2;
     object *list[listSize];
     list[0] = new sphere(vec3(-.5, 0, -1), .5);
-    list[1] = new plane(-2, 0, 2, -2, 0);
-//    list[1] = new sphere(vec3(0,-100.5,-1), 100);
+//     list[1] = new plane(-2, 0, 2, -2, 0);
+    list[1] = new sphere(vec3(0,-100.5,-1), 100);
 //    list[2] = new sphere(vec3(.5,0,-1), .5);
 
 
     object *world = new hittable_list(list, listSize);
 
     Camera cam;
-
-    // TODO: Add anti-aliasing
 
     // LENGTH - 1 to 0
     for (short j = short(LENGTH - 1); j >= 0; --j) {
@@ -89,7 +87,7 @@ int main() {
             int ir = int(255.99*col.r());
             int ig = int(255.99*col.g());
             int ib = int(255.99*col.b());
-//            std::cout << ir << " " << ig << " " << ib << "\n";
+            std::cout << ir << " " << ig << " " << ib << "\n";
         }
     }
 }
